@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRP Connecting People</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden; /* Evita el scroll horizontal */
+    }
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 767px) {
+      #home {
+        padding-top: 120px; /* Ajusta según la altura de tu navbar */
+      }
+      .hero h1 {
+        font-size: 8vw; /* Ajusta el tamaño de la fuente para que se vea mejor en pantallas pequeñas */
+      }
+    }
+
+     /* Botón flotante de WhatsApp */
+    .float {
+        position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .float:hover {
+      text-decoration: none;
+      color: #25d366;
+      background-color: #fff;
+    }
+
+    .my-float {
+        margin-top: 16px;
+    }
+
+
+    /* Splash Screen Styles */
+    #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff; /* Fondo blanco */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+    }
+
+    .splash-logo {
+        width: 220px; /* Ajusta el tamaño del logo */
+        height: auto;
+        animation: fadeIn 1.5s ease; /* Efecto de desvanecido del logo */
+    }
+
+    /* Animación de desvanecido */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Ajustes para la sección "home" */
+.hero .hero-text {
+    font-size: 6vw; /* Aumenta el tamaño de la fuente */
+    font-weight: 800; /* Mayor grosor en el texto */
+    color: #fff; /* Color blanco para contraste */
+    text-align: left; /* Alineación a la izquierda */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
+    position: absolute;
+    top: 25%; /* Coloca el texto a mitad de altura */
+    left: 9%; /* Separación de la izquierda */
+    transform: translateY(-50%);
+}
+
+.hero h1 {
+    margin: 0; /* Elimina los márgenes del título */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 767px) {
+    .hero .hero-text {
+        font-size: 10vw; /* Tamaño de fuente aún mayor en móvil */
+        left: 10%; /* Ajuste del margen izquierdo */
+    }
+}
+
+/* Ajuste para centrar el texto en dispositivos móviles */
+@media (max-width: 767px) {
+    .hero .hero-text {
+        text-align: center;
+        left: 50%; /* Centro horizontal */
+        transform: translate(-50%, -50%); /* Ajusta al centro en ambas direcciones */
+        font-size: 8vw; /* Tamaño de fuente más grande en móviles */
+    }
+}
+
+/* Espaciado adicional entre enlaces del navbar solo en desktop */
+@media (min-width: 992px) {
+    .navbar-nav .nav-link {
+        margin-right: 20px; /* Ajusta este valor según el espacio que desees */
+    }
+    .navbar-nav .nav-item:last-child .nav-link {
+        margin-right: 0; /* El último enlace no necesita margen extra */
+    }
+}
+  </style>
+</head>
+<body>
+    <div id="splash-screen">
+        <img src="img/crp-logo-1.png" alt="CRP Logo" class="splash-logo">
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <img src="img/crp-logo-1.png" alt="CRP Logo" class="img-fluid" style="width: 180px;" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#quienes">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contactos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid p-0">
+        <section id="home" class="hero text-center">
+            <div class="position-relative">
+                <img class="bg-image img-fluid w-100" src="img/portada-crp.png" loading="lazy" alt="Fondo con imagen">
+                <div class="hero-text text-dark">
+                    <h1 class="mb-3">Compromiso.</h1>
+                    <h1 class="mb-3">Valores éticos.</h1>
+                    <h1 class="mb-3">Innovación.</h1>
+                </div>
+            </div>
+        </section>
+        
+      <section id="quienes" class="text-light w-100 position-relative" style="background-image: url('./img/portada-conecxa.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(30, 30, 36, 0.884);"></div> <!-- Difuminado gris -->
+          <div class="container position-relative z-index-1" style="padding: 50px 0;">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-6 mb-3 mb-md-0 slide-in-left">
+                    <h2 class="mb-4 fs-1">¿QUIENES SOMOS?</h2>
+                </div>
+                <div class="col-md-6 slide-in-right">
+                      <p class="lead">
+                        En CRP Connecting People, buscamos conectar a las personas de 
+                    manera significativa, brindando un servicio al cliente de excelencia a 
+                    través de nuestras soluciones de call center. Somos el puente que une 
+                    a nuestros clientes con sus consumidores, creando experiencias 
+                    positivas y duraderas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="my-5">
+        <div class="text-start text-md-start text-center slide-in-left"> <!-- Clase para el título -->
+            <h1 class="ms-3 ms-md-5">
+                <span class="text-decoration-underline">N</span>uestros valores
+            </h1>
+        </div>
+    </section>
+
+    <div class="container-fluid px-lg-5"> <!-- Ajuste de padding en pantallas grandes -->
+        <div class="row align-items-start">
+            <!-- Columna izquierda con la imagen -->
+            <div class="col-lg-6 d-flex justify-content-center slide-in-left"> <!-- Clase para la imagen -->
+                <img src="img/valores-crp.png" 
+                     class="img-fluid" 
+                     style="max-width: 95%; max-height: 500px; object-fit: cover; margin-left: 5%;" 
+                     alt="Valores CRP"> <!-- Ajuste de margen y altura -->
+            </div>
+    
+            <!-- Columna derecha con los textos de los valores -->
+            <div class="col-lg-6">
+                <div class="ml-lg-4 slide-in-right"> <!-- Clase para el primer subtítulo y párrafo -->
+                    <h3>Compromiso</h3>
+                    <p class="small">En CRP Connecting People, nos comprometemos con nuestros clientes, empleados y socios, cumpliendo siempre nuestras promesas y liderando con el ejemplo.</p>
+                    <hr class="my-4" style="width: 80%;">
+                </div>
+    
+                <div class="ml-lg-4 slide-in-right"> <!-- Clase para el segundo subtítulo y párrafo -->
+                    <h3>Innovación</h3>
+                    <p class="small">La innovación y la transformación digital forman parte de nuestro ADN.</p>
+                    <hr class="my-4" style="width: 80%;">
+                </div>
+    
+                <div class="ml-lg-4 slide-in-right"> <!-- Clase para el tercer subtítulo y párrafo -->
+                    <h3>Excelencia</h3>
+                    <p class="small">En CRP Connecting People, la excelencia guía cada aspecto de nuestro trabajo, garantizando ejecución impecable.</p>
+                    <hr class="my-4" style="width: 80%;">
+                </div>
+    
+                <div class="ml-lg-4 slide-in-right"> <!-- Clase para el cuarto subtítulo y párrafo -->
+                    <h3>Integridad e Inclusión</h3>
+                    <p class="small">Fomentamos un ambiente ético y transparente, basado en la confianza, el respeto y la inclusión.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="container-fluid p-0 my-5">
+    <div class="row g-0">
+        <!-- Columna izquierda con la imagen -->
+        <div class="col-lg-6 col-12 p-0" style="min-height: 600px;">
+            <img src="img/trabaja-con-nostros-crp.png" 
+                 class="img-fluid w-100 h-100" 
+                 style="object-fit: cover;"
+                 loading="lazy" 
+                 alt="Equipo">
+        </div>
+
+        <!-- Columna derecha con el texto sobre un fondo gris oscuro -->
+        <div class="col-lg-6 col-12 d-flex align-items-center" style="background-color: #383838; min-height: 600px;">
+            <div class="d-flex flex-column justify-content-center align-items-start p-5 text-white" style="height: 100%;">
+                <h2 class="display-4 team-section-title" style="font-weight: 500; color: rgb(255, 255, 255);">
+                    ¿Te gustaria formar <br> parte de nuestro <br> equipo?
+                </h2>
+                <!-- Línea blanca gruesa debajo del encabezado -->
+                <hr style="border: 4px solid rgb(255, 255, 255); width: 4%; margin-left: 0;">
+                <p class="lead mt-4 team-section-paragraph" style="font-weight: 300; color: white;">
+                    En CRP Connecting People, buscamos personas apasionadas y comprometidas para ofrecer un servicio de calidad y crear conexiones significativas. Si valoras la innovación, integridad y excelencia, explora nuestras oportunidades y únete a una empresa que hace la diferencia en cada interacción. ¡Conéctate con nosotros!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+      <section id="contact" class="container py-5">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <h4 class="fs-1 contact-title">
+              <span class="text-decoration-underline">C</span>ontáctanos
+            </h4>
+            <p class="contact-paragraph">Si tienes alguna pregunta, comentario o necesitas asistencia <br> adicional, no dudes en contactarnos. Estamos aquí para <br> ayudarte en lo que necesites.</p>
+            <!-- <p class="mt-4"><strong>Nos encuentras en:</strong><br>Av. Circunvalación del Golf de los Incas 134 Surco</p> -->
+          </div>
+          
+          <div class="col-md-6 contact-form">
+            <form>
+                <div class="row">
+                    <!-- Primera columna interna -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombres y Apellidos</label>
+                            <input style="background-color: #343a40; color: white;" type="text" id="nombre" class="form-control input-dark rounded" placeholder="Nombres y Apellidos" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input style="background-color: #343a40; color: white;" type="tel" id="telefono" class="form-control input-dark" placeholder="Teléfono" required>
+                        </div>
+                    </div>
+
+                    <!-- Segunda columna interna -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input style="background-color: #343a40; color: white;" type="email" id="correo" class="form-control input-dark" placeholder="Correo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <input style="background-color: #343a40; color: white;" type="text" id="mensaje" class="form-control input-dark" placeholder="Mensaje" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6  mt-3">
+                      <button type="submit" class="btn btn-dark w-100">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center bg-warning py-2   text-dark">
+      <p class="small mt-2  ">&copy; CRP CONNECTING PEOPLE 2024</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+
+</body>
+</html>
