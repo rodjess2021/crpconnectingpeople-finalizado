@@ -118,3 +118,16 @@ applyScrollReveal();
 
 // Vuelve a aplicar configuración si la ventana cambia de tamaño (para desktop y móvil)
 window.addEventListener('resize', applyScrollReveal);
+
+function applyScrollReveal() {
+  const isMobile = window.innerWidth <= 767;
+
+  ScrollReveal().reveal('.hero-text h1', {
+      origin: 'left',
+      distance: '50px',
+      duration: 1000,
+      interval: 300, // Retraso incremental para animación secuencial
+      reset: !isMobile, // Repite la animación en dispositivos móviles también
+      once: false       // Aplica la animación siempre, incluso en móvil
+  });
+}
